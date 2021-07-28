@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import LoginContainer from './Containers/LoginContainer'
+import HomePageContainer from './Containers/HomePageContainer'
+import SwapEventContainer from './Containers/SwapEventContainer'
+import UserClosetContainer from './Containers/UserClosetContainer'
+import SwapClosetContainer from './Containers/SwapClosetContainer'
+import ClothingDetailsComponent from './Components/ClothingDetailsComponent'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" render={() => <LoginContainer />}/>
+      <Route exact path="/home" render={() => <HomePageContainer />}/>
+      <Route exact path="/swap" render={() => <SwapEventContainer />}/>
+      <Route exact path="/closet" render={() => <UserClosetContainer />}/>
+      <Route exact path="/swapCloset" render={() => <SwapClosetContainer />}/>
+      <Route exact path="/clothingDetails" render={() => <ClothingDetailsComponent />}/>
+    </Router>
   );
 }
 
