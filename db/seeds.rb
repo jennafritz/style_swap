@@ -52,13 +52,13 @@ Clothing.create(name: "Gold Watch", category: categories.sample, color: "Gold", 
 #     Swap.create(start: Faker::Time.between(from: DateTime.now, to: DateTime.now - 1), end: Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 2), name: Faker::Subscription.plan)
 # end
 
-Swap.create(start: "2021-06-23 12:30:59 -0400", end: "2021-06-23 17:30:59 -0400", name: "Swap 1")
-Swap.create(start: "2021-06-24 12:30:59 -0400", end: "2021-06-24 15:30:59 -0400", name: "Swap 2")
-Swap.create(start: "2021-06-25 08:30:59 -0400", end: "2021-06-25 12:30:59 -0400", name: "Swap 3")
-Swap.create(start: "2021-06-22 10:30:59 -0400", end: "2021-06-22 14:30:59 -0400", name: "Swap 4")
-Swap.create(start: "2021-06-26 14:30:59 -0400", end: "2021-06-26 17:30:59 -0400", name: "Swap 5")
-Swap.create(start: "2021-06-23 16:15:59 -0400", end: "2021-06-23 18:30:59 -0400", name: "Swap 6")
-Swap.create(start: "2021-06-24 15:50:00 -0400", end: "2021-06-24 22:00:00 -0400", name: "Swap 7")
+Swap.create(start: "2021-07-29 16:30:59 -0400", end: "2021-07-29 17:30:59 -0400", name: "Swap 1")
+Swap.create(start: "2021-07-30 12:30:59 -0400", end: "2021-07-30 15:30:59 -0400", name: "Swap 2")
+Swap.create(start: "2021-07-29 17:30:59 -0400", end: "2021-07-29 18:30:59 -0400", name: "Swap 3")
+Swap.create(start: "2021-07-31 10:30:59 -0400", end: "2021-07-31 14:30:59 -0400", name: "Swap 4")
+Swap.create(start: "2021-07-31 14:30:59 -0400", end: "2021-07-31 17:30:59 -0400", name: "Swap 5")
+Swap.create(start: "2021-07-29 16:20:59 -0400", end: "2021-07-29 18:30:59 -0400", name: "Swap 6")
+Swap.create(start: "2021-07-30 15:50:00 -0400", end: "2021-07-30 22:00:00 -0400", name: "Swap 7")
 
 
 # 15.times do

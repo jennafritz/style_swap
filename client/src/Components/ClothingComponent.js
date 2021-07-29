@@ -2,8 +2,9 @@ import Container from "react-bootstrap/Container"
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-function ClothingComponent({clothing, parent}) {
-    console.log(clothing)
+function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSwap}) {
+
+
     return(
         <Container>
             {clothing
@@ -27,9 +28,9 @@ function ClothingComponent({clothing, parent}) {
 
                     {parent === "swapClosetClothingContainer"
                     ? <Button
-                        // onClick={() => toggleInclusionToSwap(clothing)}
+                        onClick={() => toggleInclusionToSwap(clothing)}
                     >
-                        {/* {this.checkIfInSwap() ? 'Remove From Swap' : 'Add to Swap'} */}
+                        {checkIfInSwap(clothing) ? 'Remove From Swap' : 'Add to Swap'}
                         </Button>
                     : null} 
 
