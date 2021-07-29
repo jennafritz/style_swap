@@ -31,9 +31,9 @@ function LoginFormComponent() {
             } else {
                 console.log(response.payload.user)
                 localStorage.token = response.payload.token
+                history.push("/home")
             }
         })
-        .then(() => history.push("/home"))
     }
 
 return(

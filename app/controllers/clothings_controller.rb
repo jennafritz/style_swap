@@ -34,9 +34,9 @@ before_action :find_clothing, only: [:show, :destroy, :update]
     end
     
 
-    def index_user_clothings
+    def fetch_user_clothings
         user_clothings = Clothing.where({user_id: params[:user_id]})
-        render json: user_clothings, each_serializer: ClothingsIndexSerializer
+        render json: user_clothings, each_serializer: ClothingIndexSerializer
     end
 
     private
