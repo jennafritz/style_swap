@@ -12,9 +12,12 @@ function SwapsJoinedComponent({swap}) {
     useEffect(() => {
         const interval = setInterval(() => {
             setAbleToEnter(swap.start <= new Date())
-        })
+        }, 1000)
         return () => clearInterval(interval)
     }, [])
+
+    // should do an upcoming joined swaps section 
+    // and a current joined swaps section ??
 
     return(
         <Container>

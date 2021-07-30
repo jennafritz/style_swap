@@ -23,7 +23,6 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
     def fetch_current_user_swaps
         current_user = User.find(params[:user_id])
         current_user_swaps = current_user.swaps.order(start: :asc)
-        byebug
         render json: current_user_swaps, status: :accepted
     end
 

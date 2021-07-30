@@ -45,6 +45,19 @@ export const setCurrentSwap = createAsyncThunk("swaps/setCurrentSwap", swapId =>
     .then(currentSwap => currentSwap)
 })
 
+export const createSwap = createAsyncThunk("swaps/createSwap", swapObj => {
+    return fetch("http://localhost:3000/swaps", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify(swapObj)
+    })
+    .then(res => res.json())
+    .then(newlyCreatedSwapObj => newlyCreatedSwapObj)
+})
+
 
 // Reducer
 
@@ -74,6 +87,13 @@ const swapsSlice = createSlice({
                 console.log(action.payload.error)
             } else {
                 state.currentSwap = action.payload
+            }
+        },
+        [createSwap.fulfilled](state, action){
+            if(action.payload.error){
+                console.log(action.payload.error)
+            } else {
+                state.allSwaps.push(action.payload)
             }
         }
     }

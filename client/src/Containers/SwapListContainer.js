@@ -32,6 +32,9 @@ function SwapListContainer() {
     }))
 
     let upcomingJoinedSwaps = optimizedCurrentUserSwaps.filter(swap => swap.end > new Date())
+    upcomingJoinedSwaps.sort((swapA, swapB) => {
+        return swapA.start < swapB.start
+    })
 
     let allUnjoinedSwaps = [...optimizedAllSwaps]
     optimizedCurrentUserSwaps.forEach(currentUserSwap => {
@@ -39,6 +42,9 @@ function SwapListContainer() {
         allUnjoinedSwaps.splice(index, 1)
     })
     let upcomingUnjoinedSwaps = allUnjoinedSwaps.filter(swap => swap.start > new Date())
+    upcomingUnjoinedSwaps.sort((swapA, swapB) => {
+        return swapA.start < swapB.start
+    })
 
     return(
         <Container>
