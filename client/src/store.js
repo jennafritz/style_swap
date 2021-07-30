@@ -10,8 +10,8 @@ const store = configureStore({
     reducer: {
         users: usersReducer,
         clothings: clothingsReducer,
-        swap_users: swapUsersReducer,
-        swap_clothings: swapClothingsReducer,
+        swapUsers: swapUsersReducer,
+        swapClothings: swapClothingsReducer,
         swaps: swapsReducer
     }
 })

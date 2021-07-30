@@ -48,10 +48,8 @@ function CreateSwapsFormComponent() {
             })
         } else {
             if(optimizedSwapObj.end <= optimizedSwapObj.start){
-                console.log("bad if end before swap")
                 alert("Swap end must be later than start")
             } else if(optimizedSwapObj.start < Date.now()) {
-                console.log("bad if already started")
                 alert("Swap must be in the future")
             }
         }

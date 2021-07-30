@@ -1,9 +1,16 @@
 import Container from "react-bootstrap/Container"
+import Card from "react-bootstrap/esm/Card"
+import Button from "react-bootstrap/esm/Button"
 
-function SwapperComponent() {
+function SwapperComponent({swapper}) {
     return(
         <Container>
-            Swapper Component
+            <Card>
+                <Card.Img src={swapper.image_url} alt={swapper.username}/>
+                <Card.Body>
+                    <Card.Title>{swapper.username}</Card.Title>
+                </Card.Body>
+            </Card>
         </Container>
     )
 }

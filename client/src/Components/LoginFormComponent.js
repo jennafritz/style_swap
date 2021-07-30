@@ -29,7 +29,6 @@ function LoginFormComponent() {
             if(response.payload.error){
                 alert(response.payload.error)
             } else {
-                console.log(response.payload.user)
                 localStorage.token = response.payload.token
                 history.push("/home")
             }

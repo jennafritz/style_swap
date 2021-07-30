@@ -1,10 +1,12 @@
 import Container from 'react-bootstrap/esm/Container'
 import SwapperComponent from '../Components/SwapperComponent'
 
-function SwapperListContainer() {
+function SwapperListContainer({swappers}) {
     return(
         <Container>
-            <SwapperComponent />
+            {swappers.map(swapper => (
+                <SwapperComponent swapper={swapper} key={swapper.id}/>
+            ))}
         </Container>
     )
 }

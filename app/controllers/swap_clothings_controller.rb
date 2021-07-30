@@ -12,10 +12,15 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
             render json: { error: invalid.record.errors.full_messages }, status: :not_acceptable
     end
 
+    def fetch_current_swap_clothings
+        current_swap_clothings = SwapClothing.where(swap_id: params[:swap_id])
+        render json: current_swap_clothings, status: :ok
+    end
+
     def destroy
         swap_clothing = SwapClothing.find(params[:id])
         swap_clothing.destroy!
-        render json: {message: "SwapClothing Destroyed"}, status: :accepted
+        render json: {deleted_id: params[:id], message: "SwapClothing Destroyed"}, status: :accepted
     end
 
     private

@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 import { useHistory } from "react-router"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/esm/Button"
+import { setCurrentSwap } from "../reducers/swapsReducer"
+import { fetchCurrentSwapClothings } from "../reducers/swapClothingsReducer"
 
 function SwapsJoinedComponent({swap}) {
 
+    const dispatch = useDispatch()
     const history = useHistory()
 
     const [ableToEnter, setAbleToEnter] = useState(swap.start <= new Date())
@@ -34,7 +38,10 @@ function SwapsJoinedComponent({swap}) {
             })}
             {ableToEnter
             ? <Button onClick={() => {
-                history.push("/swap")
+                dispatch(setCurrentSwap(swap.id)).then(() => {
+                    dispatch(fetchCurrentSwapClothings(swap.id))
+                    history.push("/swap")
+                })                
                 }}>Enter Swap</Button>
             : null}
         </Container>

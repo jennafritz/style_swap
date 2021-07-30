@@ -17,6 +17,19 @@ export const createSwapUser = createAsyncThunk("swapUsers/createSwapUser", swapU
     .then(newlyCreatedSwapUser => newlyCreatedSwapUser)
 })
 
+export const reduceCredits = createAsyncThunk("swapUsers/reduceCredits", swapUserInfoObj => {
+    return fetch(`http://localhost:3000/swap_users/${swapUserInfoObj.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({credits: swapUserInfoObj.credits - 1})
+    })
+    .then(res => res.json())
+    .then(updatedSwapUser => updatedSwapUser)
+})
+
 
 // Reducer
 
@@ -28,6 +41,13 @@ const swapUsersSlice = createSlice({
     },
     extraReducers: {
         [createSwapUser.fulfilled](state, action){
+            if(action.payload.error){
+                console.log(action.payload.error)
+            } else {
+                console.log(action.payload)
+            }
+        },
+        [reduceCredits.fulfilled](state, action){
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {

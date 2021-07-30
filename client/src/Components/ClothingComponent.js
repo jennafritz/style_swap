@@ -2,8 +2,7 @@ import Container from "react-bootstrap/Container"
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSwap}) {
-
+function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSwap, handleTakeClothing, credits}) {
 
     return(
         <Container>
@@ -34,18 +33,16 @@ function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSw
                         </Button>
                     : null} 
 
-                    {parent === "swapClothingContainer" 
+                    {parent === "swapEventClothingContainer" 
                     ? <Button
-                    // // updates clothing to have user's id
-                    // onClick={() => {
-                    // if (credits > 0) {
-                    //     takeClothing(clothing.id)
-                    // } else {
-                    //     alert("You don't have any credits left!")
-                    // }
-                    // reduceCredits()
-                    // console.log('invoked')
-                    // }}
+                    // updates clothing to have user's id
+                    onClick={() => {
+                        if (credits > 0) {
+                            handleTakeClothing(clothing.id)
+                        } else {
+                            alert("You don't have any credits left!")
+                        }
+                        }}
                     >Take</Button>
                     : null}
                 </Card.Footer>

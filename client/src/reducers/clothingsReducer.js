@@ -45,6 +45,19 @@ export const removeUserIdFromClothing = createAsyncThunk("clothings/removeUserId
     .then(updatedClothingsArray => updatedClothingsArray)
 })
 
+export const updateClothing = createAsyncThunk("clothings/updateClothing", clothingObj => {
+    return fetch(`http://localhost:3000/clothings/${clothingObj.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify(clothingObj)
+    })
+    .then(res => res.json())
+    .then(updatedClothingObj => updatedClothingObj)
+})
+
 
 // Reducer
 
@@ -73,12 +86,18 @@ const clothingsSlice = createSlice({
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {
-                console.log(action.payload)
-                // action.payload.forEach(updatedClothing => {
-                //     state.currentUserClothings = state.currentUserClothings.filter(clothing => clothing.id !== updatedClothing.id)
-                // })
+                action.payload.result.forEach(updatedClothing => {
+                    state.currentUserClothings = state.currentUserClothings.filter(clothing => clothing.id !== updatedClothing.id)
+                })
             }
-        }        
+        },
+        [updateClothing.fulfilled](state, action){
+            if(action.payload.error){
+                console.log(action.payload.error)
+            } else {
+                state.currentUserClothings.push(action.payload)
+            }
+        }         
     }
 })
 
