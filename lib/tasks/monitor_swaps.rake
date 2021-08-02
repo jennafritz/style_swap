@@ -1,4 +1,4 @@
-desc 'This task will check all swaps every minute, to see if they have finished, and assign leftover clothings if neseccary.'
+desc 'This task will check all swaps every minute, to see if they have finished, and assign leftover clothings if necessary.'
 task :monitor_swaps => :environment do
 
     def check

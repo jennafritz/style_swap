@@ -16,23 +16,23 @@ function SwapEventContainer() {
     
     const currentSwap = useSelector(state => state.swaps.currentSwap)
     const currentUser = useSelector(state => state.users.currentUser)
+    const currentSwapUser = useSelector(state => state.swapUsers.currentSwapUser)
     const currentSwapSwapClothings = useSelector(state => state.swapClothings.currentSwapClothings)
     
-    const [allSwapUsers, setAllSwapUsers] = useState([...currentSwap.swap_users])
-    const [currentSwapUser, setCurrentSwapUser] = useState(allSwapUsers.find(swapUser => swapUser.user_id === currentUser.id))
+    // const [allSwapUsers, setAllSwapUsers] = useState([...currentSwap.swap_users])
+    // const [currentSwapUser, setCurrentSwapUser] = useState(allSwapUsers.find(swapUser => swapUser.user_id === currentUser.id))
     const [clothingsInSwap, setClothingsInSwap] = useState([])
     
-    useEffect(() => {
-            if(currentSwapSwapClothings && currentSwapSwapClothings.length > 0){
-                setClothingsInSwap(currentSwapSwapClothings.map(swapClothing => swapClothing.clothing))
-            }
-            // dispatch(setCurrentSwap(currentSwap.id))
-    }, [currentSwapSwapClothings])
-
     // useEffect(() => {
-    //     setAllSwapUsers([...currentSwap.swap_users])
-    //     setCurrentSwapUser(allSwapUsers.find(swapUser => swapUser.user_id === currentUser.id))
-    // }, [currentSwap.swap_users])
+    //         if(currentSwapSwapClothings && currentSwapSwapClothings.length > 0){
+    //             setClothingsInSwap(currentSwapSwapClothings.map(swapClothing => swapClothing.clothing))
+    //         }
+    //         // dispatch(setCurrentSwap(currentSwap.id))
+    // }, [currentSwapSwapClothings])
+
+    useEffect(() => {
+        setClothingsInSwap([...currentSwap.clothings])
+    }, [currentSwap])
 
     // useEffect to update allSwapUsers and currentSwapUser?? but based on what?
     // might need to store currentSwapUser in Redux state...

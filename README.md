@@ -1,3 +1,116 @@
+# Style Swap
+> A virtual clothing swap app that allows users to upload their clothes, view others’ closets, and participate in swap events.
+
+<!-- > Live demo [_here_](https://www.example.com). If you have the project hosted somewhere, include the link here. -->
+
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
+<!-- * [License](#license) -->
+
+
+## General Information
+- Provide general information about your project here.
+- What problem does it (intend to) solve?
+- What is the purpose of your project?
+- Why did you undertake it?
+<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+
+
+## Technologies Used
+- Ruby on Rails
+- PostgreSQL
+- React
+- React Router
+- Redux Toolkit
+- React Bootstrap
+- NodeJS and npm
+
+
+## Features
+List the ready features here:
+- Awesome feature 1
+- Awesome feature 2
+- Awesome feature 3
+
+
+## Screenshots
+![Example screenshot](./img/screenshot.png)
+<!-- If you have screenshots you'd like to share, include them here. -->
+
+
+## Setup
+**Fork and clone this repository**.
+
+Then run:
+
+```sh
+bundle install
+rails db:create
+npm install --prefix client
+```
+
+
+## Usage
+You can use the following commands to run the application:
+
+- `rails s`: run the backend on [http://localhost:3000](http://localhost:3000)
+- `npm start --prefix client`: run the frontend on
+  [http://localhost:4000](http://localhost:4000)
+- `rails start`: run the frontend and backend together with one command
+
+
+## Project Status
+Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+
+
+## Room for Improvement
+Include areas you believe need improvement / could be improved. Also add TODOs for future development.
+
+Room for improvement:
+- Improvement to be done 1
+- Improvement to be done 2
+
+To do:
+- Feature to be added 1
+- Feature to be added 2
+
+
+## Acknowledgements
+- Base repo setup cloned from _____ for easy deployment to Heroku
+- Original version created with @pretendprogrammer: 
+- 
+- This project was based on [this tutorial](https://www.example.com).
+- Many thanks to...
+
+
+## Contact
+Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Project Template: React/Rails API
 
 ## Description

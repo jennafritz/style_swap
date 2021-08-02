@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :swap_clothings, only: [:create, :destroy]
   post "fetch_current_swap_clothings", to: "swap_clothings#fetch_current_swap_clothings"
   resources :swap_users, only: [:create, :update]
+  post "set_current_swap_user", to: "swap_users#set_current_swap_user"
   resources :swaps, only: [:index, :show, :create]
   post "fetch_current_user_swaps", to: "swaps#fetch_current_user_swaps"
   resources :users, only: [:create, :index]

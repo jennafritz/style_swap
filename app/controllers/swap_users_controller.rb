@@ -14,9 +14,15 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
         render json: swap_user, status: :accepted
     end
 
+    # used in previous version to get all swapUser instances for current user
     def current_swap_users
         current_swap_users = SwapUser.where(user_id: params[:currentUserId])
         render json: current_swap_users, status: :ok
+    end
+
+    def set_current_swap_user
+        current_swap_user = SwapUser.find_by(user_id: params[:user_id], swap_id: params[:swap_id])
+        render json: current_swap_user, status: :ok
     end
 
     private

@@ -4,6 +4,8 @@ import { updateClothing } from "../reducers/clothingsReducer"
 import { reduceCredits } from '../reducers/swapUsersReducer'
 import ClothingComponent from '../Components/ClothingComponent'
 import Container from 'react-bootstrap/esm/Container'
+import { setCurrentSwap } from '../reducers/swapsReducer'
+import Row from 'react-bootstrap/esm/Row'
 
 function SwapEventClothingContainer({clothings, currentSwapUser}) {
 
@@ -23,6 +25,7 @@ function SwapEventClothingContainer({clothings, currentSwapUser}) {
                 .then(() => {
                     dispatch(fetchCurrentSwapClothings(currentSwap.id))
                     dispatch(reduceCredits({id: currentSwapUser.id, credits: currentSwapUser.credits}))
+                    dispatch(setCurrentSwap(currentSwap.id))
                 })
             }
         })
@@ -30,9 +33,11 @@ function SwapEventClothingContainer({clothings, currentSwapUser}) {
 
     return(
         <Container>
-            {clothings.map(clothing => (
+            {clothings.length > 0
+            ? clothings.map(clothing => (
                 <ClothingComponent clothing={clothing} key={clothing.id} parent="swapEventClothingContainer" handleTakeClothing={handleTakeClothing} credits={currentSwapUser.credits}/>
-            ))}
+            ))
+            : <Row as="h2">It looks like all the clothing in this swap has been claimed!</Row> }
         </Container>
     )
 }

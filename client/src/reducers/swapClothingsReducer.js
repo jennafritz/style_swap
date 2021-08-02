@@ -65,14 +65,18 @@ const swapClothingsSlice = createSlice({
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {
-                state.currentSwapClothings = action.payload
+                debugger
+                state.currentSwapSwapClothings = action.payload
             }
         },
         [deleteSwapClothing.fulfilled](state, action){
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {
-                state.currentSwapClothings = state.currentSwapClothings.filter(swapClothing => swapClothing.id !== parseInt(action.payload.deleted_id, 10))
+                debugger
+                if(state.currentSwapSwapClothings.length > 0){
+                    state.currentSwapSwapClothings = state.currentSwapSwapClothings.filter(swapClothing => swapClothing.id !== parseInt(action.payload.deleted_id, 10))
+                }
             }
         }
     }

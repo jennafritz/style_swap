@@ -57,7 +57,7 @@ return(
             value={formData.password}
             placeholder='Password'
          />
-         <Form.Control textAlign="center" className="submit-button" type="submit" value="Log In"/>
+         <Form.Control type="submit" value="Log In"/>
      </Form>
  </Container>
 )
