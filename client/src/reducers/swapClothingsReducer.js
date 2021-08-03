@@ -65,7 +65,6 @@ const swapClothingsSlice = createSlice({
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {
-                debugger
                 state.currentSwapSwapClothings = action.payload
             }
         },
@@ -73,7 +72,6 @@ const swapClothingsSlice = createSlice({
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {
-                debugger
                 if(state.currentSwapSwapClothings.length > 0){
                     state.currentSwapSwapClothings = state.currentSwapSwapClothings.filter(swapClothing => swapClothing.id !== parseInt(action.payload.deleted_id, 10))
                 }

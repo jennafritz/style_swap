@@ -17,6 +17,11 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
         render json: current_swap_clothings, status: :ok
     end
 
+    def fetch_leftover_swap_clothings
+        leftover_swap_clothings = SwapClothing.where(swap_id: params[:swap_id])
+        render json: leftover_swap_clothings, status: :ok
+    end
+
     def destroy
         swap_clothing = SwapClothing.find(params[:id])
         swap_clothing.destroy!

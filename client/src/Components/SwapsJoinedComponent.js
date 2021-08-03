@@ -21,13 +21,13 @@ function SwapsJoinedComponent({swap}) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setAbleToEnter(swap.start <= new Date())
-            console.log("checking if ended, result:", ended, swap.id)
-            if(!ended){
-                console.log(ended)
-                setEnded(swap.end <= new Date())
-            } else {
-                console.log("clearing interval")
+            let now = new Date()
+            setAbleToEnter(swap.start <= now)
+            if(swap.end > now){
+                setEnded(false)
+            }
+            if(swap.end <= now) {
+                setEnded(true)
                 clearInterval(interval)
                 closeoutSwap()
             }
@@ -39,12 +39,19 @@ function SwapsJoinedComponent({swap}) {
     // and a current joined swaps section ??
 
     const closeoutSwap = () => {
-        dispatch(fetchCurrentSwapClothings(swap.id))
-        .then((result) => {
-            debugger
-            if(currentSwapSwapClothings.length > 0){
-                debugger
-                currentSwapSwapClothings.forEach(swapClothing => {
+        fetch("http://localhost:3000/fetch_leftover_swap_clothings", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.token}`
+            },
+            body: JSON.stringify({swap_id: swap.id})
+        })
+        .then(res => res.json())
+        .then(response => {
+            let leftoverSwapClothings = response
+            if(leftoverSwapClothings.length > 0){
+                leftoverSwapClothings.forEach(swapClothing => {
                     dispatch(updateClothing({id: swapClothing.clothing_id, user_id: swapClothing.prev_owner_id}))
                     .then(response => {
                         if(response.payload.error){
@@ -87,7 +94,6 @@ function SwapsJoinedComponent({swap}) {
                 </Container>
             :
             null
-            // closeoutSwap()
             }
         </Container>
     )

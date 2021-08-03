@@ -72,7 +72,6 @@ const clothingsSlice = createSlice({
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {
-                debugger
                 state.currentUserClothings = action.payload
             }
         },
@@ -96,7 +95,6 @@ const clothingsSlice = createSlice({
             if(action.payload.error){
                 console.log(action.payload.error)
             } else {
-                debugger
                 state.currentUserClothings.push(action.payload)
             }
         }         

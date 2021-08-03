@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   patch "remove_user_ids", to: "clothings#remove_user_ids"
   resources :swap_clothings, only: [:create, :destroy]
   post "fetch_current_swap_clothings", to: "swap_clothings#fetch_current_swap_clothings"
+  post "fetch_leftover_swap_clothings", to: "swap_clothings#fetch_leftover_swap_clothings"
   resources :swap_users, only: [:create, :update]
   post "set_current_swap_user", to: "swap_users#set_current_swap_user"
   resources :swaps, only: [:index, :show, :create]
