@@ -4,6 +4,7 @@ import { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import { fetchUser } from '../reducers/usersReducer'
 import {useHistory} from 'react-router-dom'
+import Row from 'react-bootstrap/esm/Row'
 
 function LoginFormComponent() {
 
@@ -36,8 +37,9 @@ function LoginFormComponent() {
     }
 
 return(
- <Container>
-     <Form onSubmit={event => {
+ <Container className="overallComponentContainer">
+     <Row as="h3">Please Log In to Continue</Row>
+     <Form id="loginForm" onSubmit={event => {
           event.preventDefault()
           handleLogin()
           }}>
