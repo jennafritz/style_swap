@@ -3,7 +3,8 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 const initialState = {
     currentUser: {},
     token: "",
-    allUsers: []
+    allUsers: [],
+    currentClosetUser: {}
 }
 
 // Action Creators
@@ -40,6 +41,18 @@ export const fetchAllUsers = createAsyncThunk("users/fetchAllUsers", unused => {
     .then(allUsersArray => allUsersArray)
 }) 
 
+export const setCurrentClosetUser = createAsyncThunk("users/setCurrentClosetUser", userId => {
+    return fetch(`http://localhost:3000/users/${userId}`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${localStorage.token}`,
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(currentClosetUserObj => currentClosetUserObj)
+})
+
 
 // Reducer
 
@@ -70,6 +83,13 @@ const usersSlice = createSlice({
                 console.log(action.payload.error)
             } else {
                 state.allUsers = action.payload
+            }
+        },
+        [setCurrentClosetUser.fulfilled](state, action){
+            if(action.payload.error){
+                console.log(action.payload.error)
+            } else {
+                state.currentClosetUser = action.payload
             }
         }
     }

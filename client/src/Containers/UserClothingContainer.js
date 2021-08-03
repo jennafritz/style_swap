@@ -8,8 +8,8 @@ function UserClothingContainer() {
 
     const dispatch = useDispatch()
 
-    const currentUser = useSelector(state => state.users.currentUser)
-    const currentUserClothings = useSelector(state => state.clothings.currentUserClothings)
+    const currentClosetUser = useSelector(state => state.users.currentClosetUser)
+    const currentClosetClothings = useSelector(state => state.clothings.currentClosetClothings)
 
     // useEffect(() => {
     //     dispatch(currentUserClothings(currentUser.id))
@@ -17,7 +17,7 @@ function UserClothingContainer() {
 
     return(
         <Container>
-            {currentUserClothings.map((clothing) => (
+            {currentClosetClothings.map((clothing) => (
             <ClothingComponent clothing={clothing} key={clothing.id} parent="userClothingContainer"/>
             ))}
         </Container>

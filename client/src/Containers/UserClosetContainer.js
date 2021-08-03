@@ -6,11 +6,11 @@ import Row from 'react-bootstrap/esm/Row'
 
 function UserClosetContainer() {
 
-    const currentUser = useSelector(state => state.users.currentUser)
+    const currentClosetUser = useSelector(state => state.users.currentClosetUser)
     
     return(
         <Container>
-            <Row as="h1">{`${currentUser.username}'s Closet`}</Row>
+            <Row as="h1">{`${currentClosetUser.username}'s Closet`}</Row>
             <UserClothingContainer />
             <AddClothingFormComponent />
         </Container>

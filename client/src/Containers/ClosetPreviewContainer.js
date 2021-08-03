@@ -2,11 +2,12 @@ import {useEffect} from 'react'
 import { useHistory } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import ClothingComponent from '../Components/ClothingComponent'
-import { fetchUserClothings } from '../reducers/clothingsReducer'
+import { fetchCurrentClosetClothings, fetchUserClothings } from '../reducers/clothingsReducer'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/esm/Button'
+import { setCurrentClosetUser } from '../reducers/usersReducer'
 
 function ClosetPreviewContainer() {
 
@@ -30,7 +31,12 @@ function ClosetPreviewContainer() {
                 ))
                 : null}
             </Row>
-            <Button onClick={() => history.push("/closet")}>Browse Your Closet</Button>
+            <Button onClick={() => {
+                dispatch(setCurrentClosetUser(currentUser.id))
+                dispatch(fetchCurrentClosetClothings(currentUser.id))
+                history.push("/closet")}
+            }
+                >Browse Your Closet</Button>
         </Container>
     )
 }

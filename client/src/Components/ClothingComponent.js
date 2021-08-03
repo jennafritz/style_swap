@@ -1,8 +1,14 @@
+import {useDispatch} from 'react-redux'
+import { setSpotlightClothing } from '../reducers/clothingsReducer'
+import {useHistory} from 'react-router-dom'
 import Container from "react-bootstrap/Container"
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSwap, handleTakeClothing, credits}) {
+
+    const dispatch = useDispatch()
+    const history = useHistory()
 
     return(
         <Container>
@@ -16,10 +22,15 @@ function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSw
                 <Card.Footer>
                     {(parent === "userClothingContainer" || parent === "swapClothingContainer")
                     ? <Button
-                    // onClick={() => {
-                    //     console.log(clothing.id)
-                    //     this.getIndividualClothing(clothing.id);
-                    // }}
+                    onClick={() => {
+                        dispatch(setSpotlightClothing(clothing.id))
+                        .then(response => {
+                            if(response.payload.error){
+                                alert(response.payload.error)
+                            } else{
+                                history.push("/clothingDetails")
+                            }
+                    })}}
                     > 
                         View Details
                     </Button>
