@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { createClothing } from "../reducers/clothingsReducer"
+import { createClothing, fetchUserClothings, fetchCurrentClosetClothings } from "../reducers/clothingsReducer"
 import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/esm/Form"
 import Row from "react-bootstrap/esm/Row"
@@ -39,6 +39,11 @@ function AddClothingFormComponent() {
         })
     }
 
+    const checkFormData = () => {
+        let formKeys = Object.keys(formData)
+        return formKeys.every(key => formData[key] !== "")
+        }
+
 
     return(
         <Container>
@@ -46,25 +51,31 @@ function AddClothingFormComponent() {
             <Form
             onSubmit={(event) => {
                 event.preventDefault()
-                dispatch(createClothing(formData))
-                .then(response => {
-                    if(response.payload.error){
-                        alert(response.payload.error)
-                    } else {
-                        setFormData({
-                            name: "",
-                            color: "",
-                            brand: "",
-                            size: "",
-                            condition: "",
-                            description: "",
-                            value: "",
-                            image_url: "",
-                            category: "",
-                            user_id: ""
-                        })
-                    }
-                })
+                if(checkFormData()){
+                    dispatch(createClothing(formData))
+                    .then(response => {
+                        if(response.payload.error){
+                            alert(response.payload.error)
+                        } else {
+                            dispatch(fetchUserClothings(currentUser.id))
+                            dispatch(fetchCurrentClosetClothings(currentUser.id))
+                            setFormData({
+                                name: "",
+                                color: "",
+                                brand: "",
+                                size: "",
+                                condition: "",
+                                description: "",
+                                value: "",
+                                image_url: "",
+                                category: "",
+                                user_id: ""
+                            })
+                        }
+                    })
+                } else {
+                    alert("Please fill in all fields")
+                }
             }}
             >
                 {/* <Form.Label>Name</Form.Label> */}
@@ -75,6 +86,7 @@ function AddClothingFormComponent() {
                 id="name"
                 name="name"
                 value={formData.name}
+                required
                 />
 
                 <Form.Control
@@ -84,9 +96,11 @@ function AddClothingFormComponent() {
                 id="brand"
                 name="brand"
                 value={formData.brand}
+                required
                 />
 
                 <Form.Control
+                required
                 placeholder="Color"
                 onChange={handleChange}
                 type="text"
@@ -96,13 +110,15 @@ function AddClothingFormComponent() {
                 />
 
                 <Form.Select
+                required
                 placeholder="Size"
                 onChange={handleChange}
                 id="size"
                 name="size"
                 value={formData.size}
+                defaultValue="Select Size"
                 >
-                    <option>Select Size</option>
+                    <option hidden>Select Size</option>
                     <option value="xs">XS</option>
                     <option value="s">S</option>
                     <option value="m">M</option>
@@ -116,8 +132,9 @@ function AddClothingFormComponent() {
                 id="condition"
                 name="condition"
                 value={formData.condition}
+                required
                 >
-                    <option>Select Condition</option>
+                    <option hidden>Select Condition</option>
                     <option value="new">New</option>
                     <option value="like_new">Like New</option>
                     <option value="gently_used">Gently Used</option>
@@ -132,6 +149,7 @@ function AddClothingFormComponent() {
                 id="description"
                 name="description"
                 value={formData.description}
+                required
                 />
 
                 <Form.Control
@@ -141,6 +159,8 @@ function AddClothingFormComponent() {
                 id="value"
                 name="value"
                 value={formData.value}
+                required
+                min="0"
                 />
 
                 <Form.Control
@@ -150,6 +170,7 @@ function AddClothingFormComponent() {
                 id="image_url"
                 name="image_url"
                 value={formData.image_url}
+                required
                 />
 
                 <Form.Select
@@ -159,8 +180,9 @@ function AddClothingFormComponent() {
                 id="category"
                 name="category"
                 value={formData.category}
+                required
                 >
-                    <option>Select Category</option>
+                    <option hidden>Select Category</option>
                     <option value="shirt">Top</option>
                     <option value="bottoms">Bottoms</option>
                     <option value="shoes">Shoes</option>
