@@ -2,18 +2,23 @@ import Container from "react-bootstrap/Container"
 import { useSelector } from "react-redux"
 import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
+import Col from "react-bootstrap/esm/Col"
 
 function ProfileComponent() {
 
     const currentUser = useSelector(state => state.users.currentUser)
 
     return(
-        <Container>
-            <Row as="h1" style={{ backgroundColor: currentUser.spirit_color }}>{currentUser.username}</Row>
-            <Image src={currentUser.image_url} alt="" />
-            <Row as="h3">About Me:</Row>
-            <Container>{currentUser.bio}</Container>
-            {/* <Container style={{ backgroundColor: this.props.spirit_color }}>spirit</Container> */}
+        <Container id="ProfileComponent" className="overallComponentContainer" style={{border: `0.5rem solid ${currentUser.spirit_color}`, borderRadius: "2rem"}}>
+            <Row>
+                <Col>
+                    <Image rounded src={currentUser.image_url} alt="profile picture"/>
+                </Col>
+                <Col>
+                    <Row as="h1">{currentUser.username}</Row>
+                    <Row as="h4">{currentUser.bio}</Row>
+                </Col>
+            </Row>
         </Container>
     )
 }

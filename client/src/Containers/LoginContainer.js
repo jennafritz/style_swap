@@ -12,6 +12,9 @@ function LoginContainer() {
     return(
         <Container fluid className="topLevelParentContainer">
             <Row as="h1" id="welcomeHeader">Welcome to Style Swap</Row>
+
+            <Row as="h3">{loginStatus ? "Please Log In to Continue" : "Sign Up to Get Started"}</Row>
+
             {loginStatus
             ?
             <LoginFormComponent />

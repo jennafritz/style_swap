@@ -22,15 +22,17 @@ function ClosetPreviewContainer() {
     }, [])
 
     return(
-        <Container>
+        <Container id="ClosetPreview" className="overallComponentContainer">
             <Row as="h2">Current Styles</Row>
-            <Row md={3}>
+            {/* <Container fluid> */}
+            <Row md={4}>
                 {currentUserClothings.length > 0 
                 ? currentUserClothings.map((clothing) => (
                     <ClothingComponent clothing={clothing} key={clothing.id} parent="closetPreviewContainer" />
                 ))
                 : null}
             </Row>
+            {/* </Container> */}
             <Button onClick={() => {
                 dispatch(setCurrentClosetUser(currentUser.id))
                 dispatch(fetchCurrentClosetClothings(currentUser.id))

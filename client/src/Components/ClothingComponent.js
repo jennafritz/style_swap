@@ -11,14 +11,17 @@ function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSw
     const history = useHistory()
 
     return(
-        <Container>
-            {clothing
-            ?
-            <Card>
+        // <Container id="ClothingComponent">
+            // {clothing
+            // ?
+            <Card id="ClothingComponent">
                 <Card.Img src={clothing.image_url} alt={clothing.name} />
                 <Card.Body>
                     <Card.Title>{clothing.name}</Card.Title>
                 </Card.Body>
+                {parent="closetPreviewContainer"
+                ? null
+                :
                 <Card.Footer>
                     {(parent === "userClothingContainer" || parent === "swapClothingContainer")
                     ? <Button
@@ -57,9 +60,10 @@ function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSw
                     >Take</Button>
                     : null}
                 </Card.Footer>
+}
             </Card>
-            : null}
-        </Container>
+            // : null}
+        // </Container>
     )
 }
 

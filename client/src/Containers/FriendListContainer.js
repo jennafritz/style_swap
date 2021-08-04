@@ -19,13 +19,15 @@ function FriendListContainer() {
     let friendsArray = allUsers.filter(user => user.id !== currentUser.id)
 
     return(
-        <Container>
+        <Container className="overallComponentContainer">
             <Row as="h2">Get Some Style Inspiration</Row>
-            {friendsArray.length > 0
-            ? friendsArray.map(friend => (
-                <FriendComponent friend={friend} key={friend.id}/>
-            ))
-            : null}
+            <Row md={4}>
+                {friendsArray.length > 0
+                ? friendsArray.map(friend => (
+                    <FriendComponent friend={friend} key={friend.id}/>
+                ))
+                : null}
+            </Row>
         </Container>
     )
 }

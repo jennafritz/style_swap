@@ -1,8 +1,10 @@
-import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
 import { useState } from 'react'
 import { createUser } from '../reducers/usersReducer'
 import { useDispatch } from 'react-redux'
+import Container from 'react-bootstrap/Container'
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/esm/Row'
+import Col from 'react-bootstrap/esm/Col'
 
 function RegisterFormContainer() {
 
@@ -36,7 +38,7 @@ function RegisterFormContainer() {
     }
 
     return(
-        <Container>
+        <Container className="overallComponentContainer">
             <Form onSubmit={(event) => {
                 event.preventDefault()
                 handleRegister()
@@ -73,15 +75,26 @@ function RegisterFormContainer() {
                     value={formData.image_url}
                     placeholder="Profile Picture"
                 />
+                <Row className="spiritColorRow">
+                <Col md="auto">
+                {/* <Form.Group> */}
+                    <Form.Label htmlFor="spirit_color">Spirit Color</Form.Label>
+                </Col>
+                <Col>
+                    <Form.Control 
+                        onChange={handleChange}
+                        type="color"
+                        id="spirit_color"
+                        name="spirit_color"
+                        value={formData.spirit_color}
+                        placeholder='Spirit Color'
+                        // style={{minWidth: "100%"}}
+                        />
+                    </Col>
+                </Row>
+                {/* </Form.Group> */}
                 <Form.Control 
-                    onChange={handleChange}
-                    type="color"
-                    id="spirit_color"
-                    name="spirit_color"
-                    value={formData.spirit_color}
-                    placeholder='Spirit Color'
-                />
-                <Form.Control 
+                    className="submitInput"
                     type="submit" value="Register"
                 />
             </Form>

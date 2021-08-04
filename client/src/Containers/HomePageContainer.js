@@ -11,7 +11,7 @@ function HomePageContainer(){
     const currentUser = useSelector(state => state.users.currentUser)
 
     return(
-        <Container fluid>
+        <Container fluid className="topLevelParentContainer">
             <ProfileComponent />
             <ClosetPreviewContainer />
             <FriendListContainer />

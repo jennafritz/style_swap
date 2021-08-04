@@ -12,25 +12,23 @@ function FriendComponent({friend}) {
     const history = useHistory()
 
     return(
-        <Container>
-            <Card>
-                <Card.Img src={friend.image_url} alt={friend.username}/>
-                <Card.Body>
-                    <Card.Title>{friend.username}</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                    <Button
-                    onClick={() => {
-                        dispatch(setCurrentClosetUser(friend.id))
-                        dispatch(fetchCurrentClosetClothings(friend.id))
-                        history.push("/closet")
-                    }}
-                    >
-                        View Closet
-                    </Button>
-                </Card.Footer>
-            </Card>
-        </Container>
+        <Card id="FriendComponent">
+            <Card.Img src={friend.image_url} alt={friend.username}/>
+            <Card.Body>
+                <Card.Title>{friend.username}</Card.Title>
+            </Card.Body>
+            <Card.Footer>
+                <Button
+                onClick={() => {
+                    dispatch(setCurrentClosetUser(friend.id))
+                    dispatch(fetchCurrentClosetClothings(friend.id))
+                    history.push("/closet")
+                }}
+                >
+                    View Closet
+                </Button>
+            </Card.Footer>
+        </Card>
     )
 }
 

@@ -38,7 +38,6 @@ function LoginFormComponent() {
 
 return(
  <Container className="overallComponentContainer">
-     <Row as="h3">Please Log In to Continue</Row>
      <Form id="loginForm" onSubmit={event => {
           event.preventDefault()
           handleLogin()
@@ -59,7 +58,7 @@ return(
             value={formData.password}
             placeholder='Password'
          />
-         <Form.Control type="submit" value="Log In"/>
+         <Form.Control className="submitInput" type="submit" value="Log In"/>
      </Form>
  </Container>
 )

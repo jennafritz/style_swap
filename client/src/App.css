@@ -11,11 +11,13 @@ html body {
 }
 
 .topLevelParentContainer {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  overflow: auto;
 }
 
 .overallComponentContainer {
@@ -24,6 +26,107 @@ html body {
   align-items: center;
 }
 
-#loginForm {
+div.container form {
+  width: 50%;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+div.container form input.form-control {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.spiritColorRow {
+  align-items: center;
+  text-align: left;
+}
+
+.spiritColorRow input#spirit_color.form-control.form-control-color {
+  min-width: 100%;
+}
+
+h1.row {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+button.btn.btn-primary {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: slategray;
+  border-color: slategrey;
+}
+
+div.container form input.submitInput.form-control {
+  width: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ProfileComponent div.row div.col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#ProfileComponent div.row {
   width: 100%;
+}
+
+#ProfileComponent img {
+  height: 100%;
+  margin: 2rem;
+}
+
+#ProfileComponent {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#ClosetPreview div.row {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+#ClothingComponent {
+  margin: 0.5rem;
+  max-width: 23%;
+  padding: 0px;
+  max-height: 15rem;
+}
+
+#ClothingComponent.card img.card-img {
+  object-fit: contain;
+  max-height: 80%;
+}
+
+#ClothingComponent div.card-body{
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-end;
+}
+
+#FriendComponent {
+  margin: 0.5rem;
+  max-width: 23%;
+  padding: 0px;
+  /* max-height: 15rem; */
+}
+
+#FriendComponent.card img.card-img {
+  object-fit: contain;
+}
+
+#FriendComponent div.card-body{
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-end;
 }
