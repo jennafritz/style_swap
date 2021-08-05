@@ -5,6 +5,7 @@ import SwapsUnjoinedAvailableComponent from '../Components/SwapsUnjoinedAvailabl
 import { fetchAllSwaps, fetchCurrentUserSwaps } from '../reducers/swapsReducer'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
+import Col from 'react-bootstrap/esm/Col'
 
 function SwapListContainer() {
 
@@ -47,19 +48,38 @@ function SwapListContainer() {
     })
 
     return(
-        <Container>
-            {upcomingJoinedSwaps.length > 0
-            ? <Row as="h2">Swaps I am Participating In</Row>
-            : null}
-            {upcomingJoinedSwaps.map(swap => (
-                <SwapsJoinedComponent swap={swap} key={swap.id} />
-            ))}
-            {upcomingUnjoinedSwaps.length > 0
-            ? <Row as="h2">Swaps Available To Join</Row>
-            : null}
-            {upcomingUnjoinedSwaps.map(swap => (
-                <SwapsUnjoinedAvailableComponent swap={swap} key={swap.id} />
-            ))}
+        <Container id="SwapListContainer" className="overallComponentContainer">
+            <Row as="h2" className="sectionTitle">Swap Events</Row>
+            <Row>
+                <Col>
+                    <Row as="h3" >Swaps I am Participating In</Row>
+                    {upcomingJoinedSwaps.length > 0
+                    ? 
+                        <Container className="swapList">
+                            {upcomingJoinedSwaps.map(swap => (
+                                <SwapsJoinedComponent swap={swap} key={swap.id} />
+                            ))}
+                        </Container>
+                    : <Row as="h6">Join a Swap to Start Exploring New Styles!</Row>
+                    }
+                </Col>
+                <Col>
+                    <Row as="h3" >Swaps Available To Join</Row>
+                    {upcomingUnjoinedSwaps.length > 0
+                    ? 
+                    <Container className="swapList">
+                    {upcomingUnjoinedSwaps.map(swap => (
+                        <SwapsUnjoinedAvailableComponent swap={swap} key={swap.id} />
+                    ))}
+                    </Container>
+                    : <Row as="h6">
+                        {currentUser.SwapsUnjoinedAvailableComponent
+                        ? "It looks like there are no upcoming swaps to join. As an admin user, though, you can create a new event for swappers to join!"
+                        : "It looks like there are no upcoming swaps to join. New events are always added, though, so check back soon!"
+                        }
+                        </Row>}
+                </Col>
+            </Row>
         </Container>
     )
 }

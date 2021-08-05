@@ -32,11 +32,13 @@ function SwapEventClothingContainer({clothings, currentSwapUser}) {
     }
 
     return(
-        <Container>
+        <Container className="overallComponentContainer">
             {clothings.length > 0
-            ? clothings.map(clothing => (
-                <ClothingComponent clothing={clothing} key={clothing.id} parent="swapEventClothingContainer" handleTakeClothing={handleTakeClothing} credits={currentSwapUser.credits}/>
-            ))
+            ? <Row md={4}>
+                {clothings.map(clothing => (
+                    <ClothingComponent clothing={clothing} key={clothing.id} parent="swapEventClothingContainer" handleTakeClothing={handleTakeClothing} credits={currentSwapUser.credits}/>
+                ))}
+            </Row>
             : <Row as="h2">It looks like all the clothing in this swap has been claimed!</Row> }
         </Container>
     )

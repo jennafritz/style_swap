@@ -1,25 +1,26 @@
+import { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import { setSpotlightClothing } from '../reducers/clothingsReducer'
 import {useHistory} from 'react-router-dom'
-import Container from "react-bootstrap/Container"
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import ClothingDetailsModal from './ClothingDetailsModal'
 
 function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSwap, handleTakeClothing, credits}) {
 
     const dispatch = useDispatch()
     const history = useHistory()
 
+    const [modalShow, setModalShow] = useState(false)
+
     return(
-        // <Container id="ClothingComponent">
-            // {clothing
-            // ?
-            <Card id="ClothingComponent">
-                <Card.Img src={clothing.image_url} alt={clothing.name} />
+        <>
+            <Card id="ClothingComponent" style={parent === "closetPreviewContainer" ? {maxHeight: "15rem"} :  null}>
+                <Card.Img style={parent !== "closetPreviewContainer" ? {maxHeight: "15rem"} :  {maxHeight: "80%"}} src={clothing.image_url} alt={clothing.name} />
                 <Card.Body>
                     <Card.Title>{clothing.name}</Card.Title>
                 </Card.Body>
-                {parent="closetPreviewContainer"
+                {parent === "closetPreviewContainer"
                 ? null
                 :
                 <Card.Footer>
@@ -31,7 +32,8 @@ function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSw
                             if(response.payload.error){
                                 alert(response.payload.error)
                             } else{
-                                history.push("/clothingDetails")
+                                // history.push("/clothingDetails")
+                                setModalShow(true)
                             }
                     })}}
                     > 
@@ -60,10 +62,10 @@ function ClothingComponent({clothing, parent, toggleInclusionToSwap, checkIfInSw
                     >Take</Button>
                     : null}
                 </Card.Footer>
-}
+                }
             </Card>
-            // : null}
-        // </Container>
+            <ClothingDetailsModal show={modalShow} onHide={() => setModalShow(false)}/>
+        </>
     )
 }
 

@@ -12,7 +12,7 @@ function FriendComponent({friend}) {
     const history = useHistory()
 
     return(
-        <Card id="FriendComponent">
+        <Card className="userCard">
             <Card.Img src={friend.image_url} alt={friend.username}/>
             <Card.Body>
                 <Card.Title>{friend.username}</Card.Title>

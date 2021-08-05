@@ -20,7 +20,7 @@ function FriendListContainer() {
 
     return(
         <Container className="overallComponentContainer">
-            <Row as="h2">Get Some Style Inspiration</Row>
+            <Row as="h2" className="sectionTitle">Get Some Style Inspiration</Row>
             <Row md={4}>
                 {friendsArray.length > 0
                 ? friendsArray.map(friend => (

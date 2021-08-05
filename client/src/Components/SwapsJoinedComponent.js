@@ -67,7 +67,7 @@ function SwapsJoinedComponent({swap}) {
     }
 
     return(
-        <Container>
+        <Container >
             {!ended 
             ?
                 <Container>
@@ -82,6 +82,7 @@ function SwapsJoinedComponent({swap}) {
                 timeStyle: "short",
                 // timeZone: "EST",
                 })}
+                <br></br>
                 {ableToEnter
                 ? <Button onClick={() => {
                     dispatch(setCurrentSwap(swap.id)).then(() => {
@@ -90,7 +91,10 @@ function SwapsJoinedComponent({swap}) {
                         history.push("/swap")
                     })                
                     }}>Enter Swap</Button>
-                : null}
+                : 
+                // null
+                <Button disabled>Not Yet Started</Button>
+                }
                 </Container>
             :
             null

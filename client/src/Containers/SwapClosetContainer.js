@@ -34,8 +34,8 @@ function SwapClosetContainer() {
     }
 
     return(
-        <Container>
-            <Row as="h1">Swap Your Clothes</Row>
+        <Container className="topLevelParentContainer">
+            <Row as="h1" className="sectionTitle">Swap Your Clothes</Row>
             <SwapClosetClothingContainer toggleInclusionToSwap={toggleInclusionToSwap} checkIfInSwap={checkIfInSwap}/>
             <Button onClick={() => {
                 dispatch(createSwapUser({user_id: currentUser.id, swap_id: currentSwap.id, credits: clothingsToSwap.length}))

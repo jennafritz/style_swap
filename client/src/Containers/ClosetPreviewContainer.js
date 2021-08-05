@@ -23,7 +23,7 @@ function ClosetPreviewContainer() {
 
     return(
         <Container id="ClosetPreview" className="overallComponentContainer">
-            <Row as="h2">Current Styles</Row>
+            <Row as="h2" className="sectionTitle">Current Styles</Row>
             {/* <Container fluid> */}
             <Row md={4}>
                 {currentUserClothings.length > 0 

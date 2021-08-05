@@ -22,8 +22,8 @@ function SwapEventContainer() {
     }, [currentSwap])
 
     return(
-        <Container>
-            <Row as="h1">Clothing Swap</Row>
+        <Container className="topLevelParentContainer">
+            <Row as="h1" className="sectionTitle">Clothing Swap</Row>
             <Row as="h5">Credits: {currentSwapUser.credits}</Row>
             <SwapEventClothingContainer clothings={clothingsInSwap} currentSwapUser={currentSwapUser}/>
             <SwapperListContainer swappers={currentSwap.users}/>

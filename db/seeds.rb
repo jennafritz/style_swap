@@ -1,7 +1,7 @@
 categories = ['Shirt', 'Bottoms', 'Shoes', "Dress", 'Accessory', 'Socks']
 # colors = ['Red', 'Black', 'Blue', 'Purple', 'White', 'Pink', 'Green', 'Fuchsia', 'Orange', 'Gold']
-sizes = ['Extra-small', 'Small', 'Medium', 'Large', 'Extra-large']
-conditions = ['New', 'Like-new', 'Gently-used', 'Normal-wear', 'Heavily-used', 'Destroyed-chic']
+sizes = ['Extra-Small', 'Small', 'Medium', 'Large', 'Extra-large']
+conditions = ['New', 'Like New', 'Gently Used', 'Normal Wear', 'Heavily Used', 'Destroyed Chic']
 
 puts "Deleting old data"
 
@@ -45,20 +45,20 @@ Clothing.create(name: "Silver Blazer", category: categories.sample, color: "Silv
 
 Clothing.create(name: "Black Boots", category: categories.sample, color: "Black", brand: "Frye", size: sizes.sample, condition: conditions.sample, image_url: "https://n.nordstrommedia.com/id/sr3/813a1d16-0015-4983-839a-b8879a50e1db.jpeg?h=365&w=240&dpr=2", description: "A perfect staple pair for your closet.", value: 150, user_id: jenna.id)
 
-Clothing.create(name: "Gold Watch", category: categories.sample, color: "Gold", brand: "Fossil", size: sizes.sample, condition: conditions.sample, image_url: "https://fossil.scene7.com/is/image/FossilPartners/BQ2542_main?$sfcc_fos_hi-res$", description: "Never be late again.", value: 175, user_id: yosef.id)
+Clothing.create(name: "Antique Gold Watch - Italian", category: categories.sample, color: "Gold", brand: "Fossil", size: sizes.sample, condition: conditions.sample, image_url: "https://fossil.scene7.com/is/image/FossilPartners/BQ2542_main?$sfcc_fos_hi-res$", description: "Never be late again.", value: 175, user_id: yosef.id)
 
 
 # 4.times do
 #     Swap.create(start: Faker::Time.between(from: DateTime.now, to: DateTime.now - 1), end: Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 2), name: Faker::Subscription.plan)
 # end
 
-Swap.create(start: "2021-08-03 11:30:00 -0400", end: "2021-08-03 11:32:00 -0400", name: "Swap 1")
-Swap.create(start: "2021-08-03 11:45:00 -0400", end: "2021-08-03 12:00:00 -0400", name: "Swap 2")
-Swap.create(start: "2021-08-03 12:30:00 -0400", end: "2021-08-03 12:45:00 -0400", name: "Swap 3")
-Swap.create(start: "2021-08-03 13:30:00 -0400", end: "2021-08-03 14:30:00 -0400", name: "Swap 4")
-Swap.create(start: "2021-08-03 14:30:00 -0400", end: "2021-08-03 17:30:00 -0400", name: "Swap 5")
-Swap.create(start: "2021-08-04 16:20:00 -0400", end: "2021-08-04 18:30:00 -0400", name: "Swap 6")
-Swap.create(start: "2021-08-04 15:50:00 -0400", end: "2021-08-04 22:00:00 -0400", name: "Swap 7")
+Swap.create(start: "2021-08-05 10:33:00 -0400", end: "2021-08-05 10:45:00 -0400", name: "Swap 1")
+Swap.create(start: "2021-08-05 11:45:00 -0400", end: "2021-08-05 12:00:00 -0400", name: "Swap 2")
+Swap.create(start: "2021-08-05 12:30:00 -0400", end: "2021-08-05 12:45:00 -0400", name: "Swap 3")
+Swap.create(start: "2021-08-05 13:30:00 -0400", end: "2021-08-05 14:30:00 -0400", name: "Swap 4")
+Swap.create(start: "2021-08-06 14:30:00 -0400", end: "2021-08-06 17:30:00 -0400", name: "Swap 5")
+Swap.create(start: "2021-08-06 16:20:00 -0400", end: "2021-08-06 18:30:00 -0400", name: "Swap 6")
+Swap.create(start: "2021-08-06 15:50:00 -0400", end: "2021-08-06 22:00:00 -0400", name: "Swap 7")
 
 
 # 15.times do

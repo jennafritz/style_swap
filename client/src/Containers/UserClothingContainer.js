@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchUserClothings } from '../reducers/clothingsReducer'
 import Container from 'react-bootstrap/esm/Container'
 import ClothingComponent from '../Components/ClothingComponent'
+import Row from 'react-bootstrap/esm/Row'
 
 function UserClothingContainer() {
 
@@ -16,10 +17,12 @@ function UserClothingContainer() {
     // }, [])
 
     return(
-        <Container>
-            {currentClosetClothings.map((clothing) => (
-            <ClothingComponent clothing={clothing} key={clothing.id} parent="userClothingContainer"/>
-            ))}
+        <Container className="overallComponentContainer">
+            <Row md={4}>
+                {currentClosetClothings.map((clothing) => (
+                <ClothingComponent clothing={clothing} key={clothing.id} parent="userClothingContainer"/>
+                ))}
+            </Row>
         </Container>
     )
 }

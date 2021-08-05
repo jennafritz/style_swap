@@ -14,13 +14,13 @@ function UserClosetContainer() {
     const currentClosetUser = useSelector(state => state.users.currentClosetUser)
     
     return(
-        <Container>
-            <Row as="h1">{`${currentClosetUser.username}'s Closet`}</Row>
+        <Container className="topLevelParentContainer">
+            <Row as="h1" className="sectionTitle">{`${currentClosetUser.username}'s Closet`}</Row>
             <UserClothingContainer />
             {currentUser.id === currentClosetUser.id
             ?
             <AddClothingFormComponent />
-            : null }
+            : <Row as="h4">{`Whoops! Looks like ${currentClosetUser.username} doesn't have any styles to share right now.`}</Row> }
             <Button onClick={() => history.goBack()}>Go Back</Button>
         </Container>
     )

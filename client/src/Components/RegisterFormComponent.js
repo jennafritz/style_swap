@@ -75,7 +75,7 @@ function RegisterFormContainer() {
                     value={formData.image_url}
                     placeholder="Profile Picture"
                 />
-                <Row className="spiritColorRow">
+                <Row className="inlineFormRow">
                 <Col md="auto">
                 {/* <Form.Group> */}
                     <Form.Label htmlFor="spirit_color">Spirit Color</Form.Label>

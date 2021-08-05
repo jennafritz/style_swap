@@ -94,9 +94,6 @@ const swapsSlice = createSlice({
                 console.log(action.payload.error)
             } else {
                 state.allSwaps.push(action.payload)
-                state.allSwaps.sort((swapA, swapB) => {
-                    return swapA.start < swapB.start
-                })
             }
         }
     }

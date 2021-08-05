@@ -24,6 +24,8 @@ html body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 div.container form {
@@ -38,12 +40,30 @@ div.container form input.form-control {
   margin-bottom: 1rem;
 }
 
-.spiritColorRow {
+div.container form select.form-select {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inlineFormRow {
   align-items: center;
   text-align: left;
 }
 
-.spiritColorRow input#spirit_color.form-control.form-control-color {
+div.inlineFormRow.row {
+  margin-right: 0rem;
+  margin-left: 0rem;
+}
+
+.inlineFormRow div.col {
+  padding: 0px;
+}
+
+.inlineFormRow div.col-md-auto {
+  padding-left: 0rem;
+}
+
+.inlineFormRow input#spirit_color.form-control.form-control-color {
   min-width: 100%;
 }
 
@@ -87,21 +107,21 @@ div.container form input.submitInput.form-control {
 }
 
 #ClosetPreview div.row {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  justify-content: space-between;
+  margin-bottom: 2rem;
+  /* justify-content: cente÷; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #ClothingComponent {
   margin: 0.5rem;
   max-width: 23%;
   padding: 0px;
-  max-height: 15rem;
 }
 
 #ClothingComponent.card img.card-img {
   object-fit: contain;
-  max-height: 80%;
+  /* max-height: 20rem; */
 }
 
 #ClothingComponent div.card-body{
@@ -112,21 +132,75 @@ div.container form input.submitInput.form-control {
   align-content: flex-end;
 }
 
-#FriendComponent {
+#ClothingComponent div.card-footer {
+  padding: 0rem;
+  background-color: white;
+  border: none;
+}
+
+div.userCard.card {
   margin: 0.5rem;
   max-width: 23%;
   padding: 0px;
-  /* max-height: 15rem; */
 }
 
-#FriendComponent.card img.card-img {
+div.userCard.card img.card-img {
   object-fit: contain;
 }
 
-#FriendComponent div.card-body{
+div.userCard.card div.card-body{
   padding: 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-end;
+  height: 2rem;
+}
+
+div.swapList.container {
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.overallComponentContainer div.row {
+  width: 100%;
+}
+
+div.container .sectionTitle.row {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#SwapListContainer h3.row {
+  justify-content: center;
+}
+
+div.swapList.container div.container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+div#SwapListContainer h6.row {
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#ClothingDetails div.row div.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#ClothingDetails div.row div.col .row {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+#ClothingDetails .list-group-item {
+  text-align: left;
+  border: none;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
