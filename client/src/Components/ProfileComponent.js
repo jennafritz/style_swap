@@ -9,12 +9,12 @@ function ProfileComponent() {
     const currentUser = useSelector(state => state.users.currentUser)
 
     return(
-        <Container id="ProfileComponent" className="overallComponentContainer" style={{border: `0.5rem solid ${currentUser.spirit_color}`, borderRadius: "2rem"}}>
+        <Container id="ProfileComponent" className="overallComponentContainer" style={{border: `0.5rem solid ${currentUser.spirit_color}`, borderRadius: "1rem"}}>
             <Row>
-                <Col>
-                    <Image rounded src={currentUser.image_url} alt="profile picture"/>
+                <Col md="auto" id="profileImageCol">
+                    <Image id="profilePicture" rounded src={currentUser.image_url} alt="profile picture"/>
                 </Col>
-                <Col>
+                <Col id="profileBioCol">
                     <Row as="h1">{currentUser.username}</Row>
                     <Row as="h4">{currentUser.bio}</Row>
                 </Col>

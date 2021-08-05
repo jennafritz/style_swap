@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/esm/Button"
-import { setCurrentSwap } from "../reducers/swapsReducer"
+import { fetchAllSwaps, setCurrentSwap } from "../reducers/swapsReducer"
 import { deleteSwapClothing, fetchCurrentSwapClothings } from "../reducers/swapClothingsReducer"
 import { setCurrentSwapUser } from "../reducers/swapUsersReducer"
 import { fetchUserClothings, updateClothing } from "../reducers/clothingsReducer"
@@ -59,6 +59,7 @@ function SwapsJoinedComponent({swap}) {
                         } else {
                             dispatch(deleteSwapClothing(swapClothing.id))
                             dispatch(fetchUserClothings(currentUser.id))
+                            dispatch(fetchAllSwaps())
                         }
                     })
                 })

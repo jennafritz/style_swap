@@ -20,7 +20,7 @@ function UserClosetContainer() {
             {currentUser.id === currentClosetUser.id
             ?
             <AddClothingFormComponent />
-            : <Row as="h4">{`Whoops! Looks like ${currentClosetUser.username} doesn't have any styles to share right now.`}</Row> }
+            : null}
             <Button onClick={() => history.goBack()}>Go Back</Button>
         </Container>
     )

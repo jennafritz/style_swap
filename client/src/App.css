@@ -96,19 +96,28 @@ div.container form input.submitInput.form-control {
   width: 100%;
 }
 
-#ProfileComponent img {
-  height: 100%;
-  margin: 2rem;
+#profilePicture {
+  object-fit: fill;
+  max-height: 50vh;
+}
+
+#profileImageCol {
+  padding-left: 0rem;
+}
+
+#profileBioCol {
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 #ProfileComponent {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding-left: 0rem;
 }
 
 #ClosetPreview div.row {
   margin-bottom: 2rem;
-  /* justify-content: cente÷; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -155,6 +164,12 @@ div.userCard.card div.card-body{
   justify-content: center;
   align-content: flex-end;
   height: 2rem;
+}
+
+div.userCard.card div.card-footer {
+  background-color: white;
+  border: none;
+  padding: 0rem;
 }
 
 div.swapList.container {

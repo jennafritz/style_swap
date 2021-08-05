@@ -5,12 +5,14 @@ import SwapEventContainer from './Containers/SwapEventContainer'
 import UserClosetContainer from './Containers/UserClosetContainer'
 import SwapClosetContainer from './Containers/SwapClosetContainer'
 import ClothingDetailsComponent from './Components/ClothingDetailsComponent'
+import ScrollToTop from './Components/ScrollToTop';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Route exact path="/" render={() => <LoginContainer />}/>
       <Route exact path="/home" render={() => <HomePageContainer />}/>
       <Route exact path="/swap" render={() => <SwapEventContainer />}/>
