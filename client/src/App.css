@@ -114,6 +114,7 @@ div.container form input.submitInput.form-control {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding-left: 0rem;
+  position: relative;
 }
 
 #ClosetPreview div.row {
@@ -218,4 +219,11 @@ div#SwapListContainer h6.row {
   border: none;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+#logoutButton {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  margin-bottom: 1rem;
 }

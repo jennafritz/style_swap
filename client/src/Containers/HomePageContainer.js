@@ -6,6 +6,7 @@ import CreateSwapsFormComponent from '../Components/CreateSwapsFormComponent'
 import Container from 'react-bootstrap/esm/Container'
 import {useSelector} from 'react-redux'
 
+
 function HomePageContainer(){
 
     const currentUser = useSelector(state => state.users.currentUser)

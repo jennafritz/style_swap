@@ -4,25 +4,25 @@
 <!-- > Live demo [_here_](https://www.example.com). If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
-* [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
+<!-- * [General Info](#general-information) -->
+<!-- * [Screenshots](#screenshots) -->
 <!-- * [License](#license) -->
 
 
-## General Information
+<!-- ## General Information
 - Provide general information about your project here.
 - What problem does it (intend to) solve?
 - What is the purpose of your project?
 - Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+You don't have to answer all the questions - just the ones relevant to your project. -->
 
 
 ## Technologies Used
@@ -36,15 +36,16 @@
 
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+Users can:
+- Maintain a custom closet of their styles (add, delete, and view clothes)
+- Participate in swap events (submit clothes for credit, then use credits to swap clothes)
+- Browse other users' closets
+- Create new swap events (admin users only)
 
 
-## Screenshots
+<!-- ## Screenshots
 ![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+If you have screenshots you'd like to share, include them here. -->
 
 
 ## Setup
@@ -69,338 +70,35 @@ You can use the following commands to run the application:
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is in progress but currently inactive.
+<!-- _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why. -->
 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
+To do:
+- Introduce friend request feature by aliasing user model
+- Add ability to request private swap of specific clothing from a friend's closet
+- More advanced styling (carousel component for "Current Styles" preview section)
+- Stricter categorization of clothing to enable filter/search functionality within swaps and within friends' closets (all or individual)
+<!-- Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
 - Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-- Feature to be added 1
-- Feature to be added 2
+- Improvement to be done 2 -->
 
 
 ## Acknowledgements
-- Base repo setup cloned from _____ for easy deployment to Heroku
-- Original version created with @pretendprogrammer: 
-- 
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- Base repo setup cloned from [this repo](https://github.com/learn-co-curriculum/project-template-react-rails-api) for easy deployment to Heroku
+- Original version created with @pretendprogrammer: [Clothing Swap](https://github.com/pretendprogrammer/Clothing-Swap)
+- User profile images courtesy of Unsplash and:
+  - [Matthew Hamilton](https://unsplash.com/photos/tNCH0sKSZbA)
+  - [Erik Lucatero](https://unsplash.com/photos/d2MSDujJl2g)
+  - [Dami Adebayo](https://unsplash.com/photos/k6aQzmIbR1s)
+  - [Seth Doyle](https://unsplash.com/photos/vmBik4xv27s)
+  - [Annie Spratt](https://unsplash.com/photos/MBjG3mgBEno)
+  - [Velizar Ivanov](https://unsplash.com/photos/gk9YUR7SDXo)
+- README format based on [this template](https://github.com/ritaly/README-cheatsheet/blob/HEAD/README.md#L1-L82)
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Project Template: React/Rails API
-
-## Description
-
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
-
-## Requirements
-
-- Ruby 2.7.4
-- NodeJS (v14 or higher), and npm
-- Heroku CLI
-- Postgresql
-
-See Environment Setup below for instructions on installing these tools if you
-don't already have them.
-
-## Setup
-
-**Fork and clone this repository**.
-
-Then run:
-
-```sh
-bundle install
-rails db:create
-npm install --prefix client
-```
-
-You can use the following commands to run the application:
-
-- `rails s`: run the backend on [http://localhost:3000](http://localhost:3000)
-- `npm start --prefix client`: run the frontend on
-  [http://localhost:4000](http://localhost:4000)
-- `rails start`: run the frontend and backend together with one command
-
-Make sure to also update this README to include documentation about
-your project. Here's a list of some [awesome readmes][] for inspiration.
-
-[awesome readmes]: https://github.com/matiassingers/awesome-readme
-
-## Deploying
-
-This application has all the starter code needed to help you deploy your
-application to Heroku. It's recommended to deploy your project early and push up
-changes often to ensure that your code works equally well in production and
-development environments.
-
-If you've already set up your environment to deploy to Heroku, you can run the
-commands below to deploy your application. If not, make sure to check out the
-Environment Setup section below.
-
-To deploy, first log in to your Heroku account using the Heroku CLI:
-
-```sh
-heroku login
-```
-
-Create the new Heroku app:
-
-```sh
-heroku create my-app-name
-```
-
-Add the buildpacks for Heroku to build the React app on Node and run the Rails
-app on Ruby:
-
-```sh
-heroku buildpacks:add heroku/nodejs --index 1
-heroku buildpacks:add heroku/ruby --index 2
-```
-
-To deploy, commit your code and push the changes to Heroku:
-
-```sh
-git add .
-git commit -m 'Commit message'
-git push heroku main
-```
-
-> Note: depending on your Git configuration, your default branch might be named
-> `master` or `main`. You can verify which by running
-> `git branch --show-current`. If it's `master`, you'll need to run
-> `git push heroku master` instead.
-
-Any time you have changes to deploy, just make sure your changes are committed
-on the main branch of your repo, and push those changes to Heroku to deploy
-them.
-
-You can view your deployed app with:
-
-```sh
-heroku open
-```
-
-## Environment Setup
-
-### Install the Latest Ruby Version
-
-Verify which version of Ruby you're running by entering this in the terminal:
-
-```sh
-ruby -v
-```
-
-Make sure that the Ruby version you're running is listed in the [supported
-runtimes][] by Heroku. At the time of writing, supported versions are 2.6.8,
-2.7.4, or 3.0.2. Our recommendation is 2.7.4, but make sure to check the site
-for the latest supported versions.
-
-If it's not, you can use `rvm` to install a newer version of Ruby:
-
-```sh
-rvm install 2.7.4 --default
-```
-
-You should also install the latest versions of `bundler` and `rails`:
-
-```sh
-gem install bundler
-gem install rails
-```
-
-[supported runtimes]: https://devcenter.heroku.com/articles/ruby-support#supported-runtimes
-
-### Install NodeJS
-
-Verify you are running a recent version of Node with:
-
-```sh
-node -v
-```
-
-If your Node version is less than 14, update it with:
-
-```sh
-nvm install node
-```
-
-You can also update your npm version with:
-
-```sh
-npm i -g npm
-```
-
-### Sign Up for a [Heroku Account][heroku signup]
-
-You can sign up at for a free account at
-[https://signup.heroku.com/devcenter][heroku signup].
-
-### Download the [Heroku CLI][heroku cli] Application
-
-Download the Heroku CLI. For OSX users, you can use Homebrew:
-
-```sh
-brew tap heroku/brew && brew install heroku
-```
-
-For WSL users, run this command in the Ubuntu terminal:
-
-```sh
-curl https://cli-assets.heroku.com/install.sh | sh
-```
-
-If you run into issues installing, check out the [Heroku CLI][heroku cli]
-downloads page for more options.
-
-After downloading, you can login via the CLI in the terminal:
-
-```sh
-heroku login
-```
-
-This will open a browser window to log you into your Heroku account. After
-logging in, close the browser window and return to the terminal. You can run
-`heroku whoami` in the terminal to verify that you have logged in successfully.
-
-[heroku signup]: https://signup.heroku.com/devcenter
-[heroku cli]: https://devcenter.heroku.com/articles/heroku-cli#download-and-install
-
-### Install Postgresql
-
-Heroku requires that you use PostgreSQL for your database instead of SQLite.
-PostgreSQL (or just Postgres for short) is an advanced database management
-system with more features than SQLite. If you don't already have it installed,
-you'll need to set it up.
-
-#### PostgreSQL Installation for WSL
-
-To install Postgres for WSL, run the following commands from your Ubuntu terminal:
-
-```sh
-sudo apt update
-sudo apt install postgresql postgresql-contrib
-```
-
-Then confirm that Postgres was installed successfully:
-
-```sh
-psql --version
-```
-
-Run this command to start the Postgres service:
-
-```sh
-sudo service postgresql start
-```
-
-Finally, you'll also need to create a database user so that you are able to
-connect to the database from Rails. First, check what your operating system
-username is:
-
-```sh
-whoami
-```
-
-If your username is "ian", for example, you'd need to create a Postgres user
-with that same name. To do so, run this command to open the Postgres CLI:
-
-```sh
-sudo -u postgres -i
-```
-
-From the Postgres CLI, run this command (replacing "ian" with your username):
-
-```sh
-createuser -sr ian
-```
-
-Then enter `control + d` or type `logout` to exit.
-
-[This guide][postgresql wsl] has more info on setting up Postgres on WSL if you
-get stuck.
-
-[postgresql wsl]: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql
-
-#### Postgresql Installation for OSX
-
-To install Postgres for OSX, you can use Homebrew:
-
-```sh
-brew install postgresql
-```
-
-Once Postgres has been installed, run this command to start the Postgres
-service:
-
-```sh
-brew services start postgresql
-```
-
-## Troubleshooting
-
-If you ran into any errors along the way, here are some things you can try to
-troubleshoot:
-
-- If you're on a Mac and got a server connection error when you tried to run
-  `rails db:create`, one option for solving this problem for Mac users is to
-  install the Postgres app. To do this, first uninstall `postgresql` by running
-  `brew remove postgresql`. Next, download the app from the
-  [Postgres downloads page][postgres downloads page] and install it. Launch the
-  app and click "Initialize" to create a new server. You should now be able to
-  run `rails db:create`.
-
-- If you're using WSL and got the following error running `rails db:create`:
-
-  ```txt
-  PG::ConnectionBad: FATAL:  role "yourusername" does not exist
-  ```
-
-  The issue is that you did not create a role in Postgres for the default user
-  account. Check [this video](https://www.youtube.com/watch?v=bQC5izDzOgE) for
-  one possible fix.
-
-- If your app failed to deploy at the build stage, make sure your local
-  environment is set up correctly by following the steps at the beginning of
-  this lesson. Check that you have the latest versions of Ruby and Bundler, and
-  ensure that Postgresql was installed successfully.
-
-- If you deployed successfully, but you ran into issues when you visited the
-  site, make sure you migrated and seeded the database. Also, make sure that
-  your application works locally and try to debug any issues on your local
-  machine before re-deploying. You can also check the logs on the server by
-  running `heroku logs`.
-
-For additional support, check out these guides on Heroku:
-
-- [Deploying a Rails 6 App to Heroku][heroku rails deploying guide]
-- [Rails Troubleshooting on Heroku][troubleshooting guide on heroku]
-
-[postgres downloads page]: https://postgresapp.com/downloads.html
-[heroku rails deploying guide]: https://devcenter.heroku.com/articles/getting-started-with-rails6
-[troubleshooting guide on heroku]: https://devcenter.heroku.com/articles/getting-started-with-rails6#troubleshooting
+Created by [@jennafritz](https://www.linkedin.com/in/jenna-fritz/) - feel free to contact me!
