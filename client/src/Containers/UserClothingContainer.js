@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
-import Container from 'react-bootstrap/esm/Container'
 import ClothingComponent from '../Components/ClothingComponent'
+import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 
 function UserClothingContainer() {

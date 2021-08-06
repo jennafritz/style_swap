@@ -1,5 +1,5 @@
-import Container from 'react-bootstrap/esm/Container'
 import SwapperComponent from '../Components/SwapperComponent'
+import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 
 function SwapperListContainer({swappers}) {

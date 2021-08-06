@@ -1,6 +1,5 @@
 import ClothingDetailsComponent from "./ClothingDetailsComponent"
 import Modal from 'react-bootstrap/Modal'
-import Button from "react-bootstrap/esm/Button"
 
 function ClothingDetailsModal(props) {
 

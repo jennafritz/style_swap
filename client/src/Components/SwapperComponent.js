@@ -1,6 +1,4 @@
-import Container from "react-bootstrap/Container"
 import Card from "react-bootstrap/esm/Card"
-import Button from "react-bootstrap/esm/Button"
 
 function SwapperComponent({swapper}) {
     return(

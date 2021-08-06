@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { createUser } from '../reducers/usersReducer'
 import { useDispatch } from 'react-redux'
+import { createUser } from '../reducers/usersReducer'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/esm/Row'

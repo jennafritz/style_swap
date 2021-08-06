@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router"
+import { deleteClothing, fetchCurrentClosetClothings, fetchUserClothings } from "../reducers/clothingsReducer"
 import Container from "react-bootstrap/Container"
 import Image from "react-bootstrap/esm/Image"
 import Button from "react-bootstrap/esm/Button"
-import { deleteClothing, fetchCurrentClosetClothings, fetchUserClothings } from "../reducers/clothingsReducer"
 import Row from "react-bootstrap/esm/Row"
 import Col from "react-bootstrap/esm/Col"
 import ListGroup from 'react-bootstrap/ListGroup'
@@ -16,8 +16,6 @@ function ClothingDetailsComponent({onHide}) {
     const spotlightClothing = useSelector(state => state.clothings.spotlightClothing)
     const currentUser = useSelector(state => state.users.currentUser)
     const currentClosetUser = useSelector(state => state.users.currentClosetUser)
-
-    console.log(spotlightClothing)
 
     return(
         // <Container className="topLevelParentContainer" >

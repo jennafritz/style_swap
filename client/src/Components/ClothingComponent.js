@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {useDispatch} from 'react-redux'
-import { setSpotlightClothing } from '../reducers/clothingsReducer'
 import {useHistory} from 'react-router-dom'
+import { setSpotlightClothing } from '../reducers/clothingsReducer'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import ClothingDetailsModal from './ClothingDetailsModal'

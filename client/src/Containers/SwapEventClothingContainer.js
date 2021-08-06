@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteSwapClothing, fetchCurrentSwapClothings } from "../reducers/swapClothingsReducer"
 import { updateClothing } from "../reducers/clothingsReducer"
 import { reduceCredits } from '../reducers/swapUsersReducer'
+import { setCurrentSwap } from '../reducers/swapsReducer'
 import ClothingComponent from '../Components/ClothingComponent'
 import Container from 'react-bootstrap/esm/Container'
-import { setCurrentSwap } from '../reducers/swapsReducer'
 import Row from 'react-bootstrap/esm/Row'
 
 function SwapEventClothingContainer({clothings, currentSwapUser}) {

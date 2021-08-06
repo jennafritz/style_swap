@@ -1,13 +1,13 @@
 import {useEffect} from 'react'
-import { useHistory } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
-import ClothingComponent from '../Components/ClothingComponent'
+import { useHistory } from 'react-router'
 import { fetchCurrentClosetClothings, fetchUserClothings } from '../reducers/clothingsReducer'
+import { setCurrentClosetUser } from '../reducers/usersReducer'
+import ClothingComponent from '../Components/ClothingComponent'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/esm/Button'
-import { setCurrentClosetUser } from '../reducers/usersReducer'
 
 function ClosetPreviewContainer() {
 
