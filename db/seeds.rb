@@ -51,18 +51,24 @@ Clothing.create(name: "Black Boots", category: "Shoes", color: "Black", brand: "
 
 Clothing.create(name: "Gold Watch", category: "Accessory", color: "Gold", brand: "Fossil", size: sizes.sample, condition: conditions.sample, image_url: "https://fossil.scene7.com/is/image/FossilPartners/BQ2542_main?$sfcc_fos_hi-res$", description: "Never be late again.", value: 175, user_id: grant.id)
 
+Clothing.create(name: "Red Flannel", category: "Top", color: "Red", brand: "LL Bean", size: sizes.sample, condition: conditions.sample, image_url: "https://cdn.shopify.com/s/files/1/1921/0751/products/red-plaid-flannel-shirt_1024x1024@2x.jpg?v=1603448952", description: "For that mountain man look.", value: 14, user_id: charlie.id)
+
+Clothing.create(name: "Floral-Sleeve Blouse", category: "Top", color: "Ivory", brand: "SHEIN", size: sizes.sample, condition: conditions.sample, image_url: "https://img.ltwebstatic.com/images3_pi/2020/07/17/15949814285c63eb6ba37a3f3de113763ed1f4e140_thumbnail_900x.webp", description: "A fun and unique addition to any closet.", value: 10, user_id: olivia.id)
+
+Clothing.create(name: "Summer Sundress", category: "Dress", color: "Navy", brand: "Melrose & Market", size: sizes.sample, condition: conditions.sample, image_url: "https://img.ltwebstatic.com/images3_pi/2020/07/14/1594691903c0088b0822fb7af0196e340f93b31a04_thumbnail_900x.webp", description: "A simple summer staple.", value: 8, user_id: alyssa.id)
+
+Clothing.create(name: "Tortoishell Sunglasses", category: "Accessory", color: "Brown", brand: "Ray-Ban", size: sizes.sample, condition: conditions.sample, image_url: "https://assets.sunglasshut.com/is/image/LuxotticaRetail/8056597484282__001.png?impolicy=SGH_bgtransparent&width=640", description: "A tried and true classic.", value: 100, user_id: matt.id)
+
 
 # 4.times do
 #     Swap.create(start: Faker::Time.between(from: DateTime.now, to: DateTime.now - 1), end: Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 2), name: Faker::Subscription.plan)
 # end
 
-Swap.create(start: "2021-08-05 16:45:00 -0400", end: "2021-08-05 16:50:00 -0400", name: "Swap 1")
-Swap.create(start: "2021-08-06 11:45:00 -0400", end: "2021-08-06 12:00:00 -0400", name: "Swap 2")
-Swap.create(start: "2021-08-06 12:30:00 -0400", end: "2021-08-06 12:45:00 -0400", name: "Swap 3")
-Swap.create(start: "2021-08-06 13:30:00 -0400", end: "2021-08-06 14:30:00 -0400", name: "Swap 4")
-Swap.create(start: "2021-08-06 14:30:00 -0400", end: "2021-08-06 17:30:00 -0400", name: "Swap 5")
-Swap.create(start: "2021-08-06 16:20:00 -0400", end: "2021-08-06 18:30:00 -0400", name: "Swap 6")
-Swap.create(start: "2021-08-06 15:50:00 -0400", end: "2021-08-06 22:00:00 -0400", name: "Swap 7")
+Swap.create(start: "2021-08-13 15:25:00 -0400", end: "2021-08-13 16:50:00 -0400", name: "Swap Exchange")
+Swap.create(start: "2021-08-15 11:45:00 -0400", end: "2021-08-15 12:00:00 -0400", name: "Closet Refresh")
+Swap.create(start: "2021-08-28 12:30:00 -0400", end: "2021-08-28 12:45:00 -0400", name: "End of Summer Swap")
+Swap.create(start: "2021-09-01 13:30:00 -0400", end: "2021-09-01 14:30:00 -0400", name: "First Fall Swap!")
+Swap.create(start: "2021-10-30 14:30:00 -0400", end: "2021-10-20 17:30:00 -0400", name: "Spooky Swap")
 
 
 # 15.times do
